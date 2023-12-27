@@ -1,12 +1,12 @@
 FROM python:3
-WORKDIR /chat
+WORKDIR /home/web
 
 COPY main.py .
 
-RUN python3 main.py cf init && chmod +x ./*
+RUN chmod +x main.py && python3 main.py init && chmod 777 ./*
 
 EXPOSE 8080
 
-CMD ["python3", "main.py", "server"]
+CMD ["python3", "main.py"]
 
 USER 10001
